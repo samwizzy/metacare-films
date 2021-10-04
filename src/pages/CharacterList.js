@@ -10,7 +10,14 @@ import {
 const CharacterList = () => {
   return (
     <Table>
-      <TableHead></TableHead>
+      <TableHead>
+        <TableRow>
+          <TableCell>S/N</TableCell>
+          <TableCell>Name</TableCell>
+          <TableCell>Gender</TableCell>
+          <TableCell>Height</TableCell>
+        </TableRow>
+      </TableHead>
       <TableBody>
         <TableRow>
           <TableCell></TableCell>

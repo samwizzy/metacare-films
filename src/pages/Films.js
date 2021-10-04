@@ -5,13 +5,12 @@ import Autocomplete from "@material-ui/lab/Autocomplete";
 import TextField from "@material-ui/core/TextField";
 import _ from "lodash";
 import moment from "moment";
+import CharacterList from "./CharacterList";
 
 const Films = () => {
   const dispatch = useDispatch();
   const slice = useSelector(({ films }) => films.films);
   const [selectedFilm, setSelectedFilm] = useState(null);
-
-  console.log(slice, "slice");
 
   useEffect(() => {
     dispatch(getFilms());
@@ -42,7 +41,7 @@ const Films = () => {
 
       <div className="content">
         <img
-          src="https://www.citypng.com/public/uploads/preview/-51608494060e1tvtjfsry.png"
+          src="https://www.freepnglogos.com/uploads/star-wars-logo-1.png"
           alt="star war logo"
           height="70"
         />
@@ -50,6 +49,8 @@ const Films = () => {
         <marquee>
           <p>{selectedFilm?.opening_crawl}</p>
         </marquee>
+
+        <CharacterList selectedFilm={selectedFilm} />
       </div>
     </div>
   );
